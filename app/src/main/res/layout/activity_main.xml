@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/bg"
+    android:weightSum="7">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:orientation="horizontal"
+        android:weightSum="8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <Button
+                    android:id="@+id/power_btn"
+                    android:onClick="bt_stop"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/power" />
+
+                <Button
+                    android:id="@+id/wifi_btn"
+                    android:onClick="bt_conn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignBottom="@id/power_btn"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/power_btn"
+                    android:background="@drawable/wifi" />
+
+                <Button
+                    android:id="@+id/setting_btn"
+                    android:onClick="bt_reset"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignBottom="@id/wifi_btn"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/wifi_btn"
+                    android:background="@drawable/setting" />
+
+                <TextView
+                    android:text="左："
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/setting_btn"
+                    android:layout_alignStart="@+id/uptext"
+                    android:id="@+id/lefttext" />
+
+                <TextView
+                    android:text="右："
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/lefttext"
+                    android:layout_alignStart="@+id/downtext"
+                    android:id="@+id/righttext" />
+
+                <TextView
+                    android:text="前："
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/uptext"
+                    android:layout_alignTop="@+id/setting_btn"
+                    android:layout_toEndOf="@+id/setting_btn"
+                    android:layout_marginStart="7dp" />
+
+                <TextView
+                    android:text="后："
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/downtext"
+                    android:layout_marginStart="24dp"
+                    android:layout_alignBaseline="@+id/uptext"
+                    android:layout_alignBottom="@+id/uptext"
+                    android:layout_toEndOf="@+id/uptext" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1"></RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/up_btn"
+                    android:onClick="bt_fw"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_above="@+id/down_btn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/up"/>
+
+                <ImageView
+                    android:id="@+id/speacImg"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignLeft="@id/up_btn"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="60dp" />
+
+                <Button
+                    android:id="@+id/left_btn"
+                    android:onClick="bt_lw"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignTop="@+id/right_btn"
+                    android:layout_toStartOf="@+id/down_btn"
+                    android:background="@drawable/left"
+                    android:gravity="center_horizontal" />
+
+                <Button
+                    android:id="@+id/right_btn"
+                    android:onClick="bt_rw"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignBottom="@+id/down_btn"
+                    android:layout_marginBottom="45dp"
+                    android:layout_toEndOf="@+id/up_btn"
+                    android:background="@drawable/right" />
+
+                <Button
+                    android:id="@+id/down_btn"
+                    android:onClick="bt_bw"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignLeft="@id/speacImg"
+                    android:layout_below="@id/speacImg"
+                    android:background="@drawable/down" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <Button
+                android:id="@+id/start_btn"
+                android:onClick="bt_tf"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/start" />
+
+            <Button
+                android:id="@+id/stop_btn"
+                android:onClick="bt_ld"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_alignTop="@+id/start_btn"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@+id/start_btn"
+                android:background="@drawable/stop" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <Button
+                android:id="@+id/turnLeft"
+                android:onClick="bt_up"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/left" />
+
+            <Button
+                android:id="@+id/turnRight"
+                android:onClick="bt_down"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignBottom="@id/turnLeft"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/turnLeft"
+                android:background="@drawable/right" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="油门：0"
+                android:textColor="#000000"
+                android:id="@+id/youtext"
+                android:layout_marginEnd="39dp"
+                android:layout_above="@+id/turnLeft"
+                android:layout_alignEnd="@+id/turnRight"
+                android:layout_marginBottom="103dp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        >
+        <com.example.wins.quadcopter.VerticalSeekBar
+            android:id="@+id/verticalSeekBar"
+            android:layout_width="30dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"></RelativeLayout>
+
+</LinearLayout>
